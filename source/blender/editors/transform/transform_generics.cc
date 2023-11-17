@@ -26,10 +26,10 @@
 #include "GPU_immediate.h"
 #include "GPU_matrix.h"
 
-#include "BKE_context.h"
+#include "BKE_context.hh"
 #include "BKE_layer.h"
 #include "BKE_mask.h"
-#include "BKE_modifier.h"
+#include "BKE_modifier.hh"
 #include "BKE_paint.hh"
 
 #include "SEQ_transform.hh"

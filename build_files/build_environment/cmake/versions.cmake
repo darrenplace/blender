@@ -115,13 +115,6 @@ set(EPOXY_HASH f0730aad115c952e77591fcc805b1dc1)
 set(EPOXY_HASH_TYPE MD5)
 set(EPOXY_FILE libepoxy-${EPOXY_VERSION}.tar.gz)
 
-set(FREEGLUT_VERSION 3.0.0)
-set(FREEGLUT_URI http://prdownloads.sourceforge.net/freeglut/freeglut/${FREEGLUT_VERSION}/freeglut-${FREEGLUT_VERSION}.tar.gz)
-set(FREEGLUT_HASH 90c3ca4dd9d51cf32276bc5344ec9754)
-set(FREEGLUT_HASH_TYPE MD5)
-set(FREEGLUT_FILE freeglut-${FREEGLUT_VERSION}.tar.gz)
-set(FREEGLUT_HOMEPAGE https://freeglut.sourceforge.net/)
-
 set(ALEMBIC_VERSION 1.8.3)
 set(ALEMBIC_URI https://github.com/alembic/alembic/archive/${ALEMBIC_VERSION}.tar.gz)
 set(ALEMBIC_HASH 2cd8d6e5a3ac4a014e24a4b04f4fadf9)

@@ -153,9 +153,9 @@ set(MINIZIPNG_HASH 09dcc8a9def348e1be9659e384c2cd55)
 set(MINIZIPNG_HASH_TYPE MD5)
 set(MINIZIPNG_FILE minizip-ng-${MINIZIPNG_VERSION}.tar.gz)
 
-set(LLVM_VERSION 12.0.0)
+set(LLVM_VERSION 15.0.7)
 set(LLVM_URI https://github.com/llvm/llvm-project/releases/download/llvmorg-${LLVM_VERSION}/llvm-project-${LLVM_VERSION}.src.tar.xz)
-set(LLVM_HASH 5a4fab4d7fc84aefffb118ac2c8a4fc0)
+set(LLVM_HASH bac436dbd5d37e38d3da75b03629053c)
 set(LLVM_HASH_TYPE MD5)
 set(LLVM_FILE llvm-project-${LLVM_VERSION}.src.tar.xz)
 set(LLVM_CPE "cpe:2.3:a:llvm:compiler:${LLVM_VERSION}:*:*:*:*:*:*:*")
@@ -207,9 +207,9 @@ set(TIFF_HOMEPAGE http://www.simplesystems.org/libtiff/)
 # Recent commit from 1.13.0.2 under development, which includes string table
 # changes that make the Cycles OptiX implementation work. Official 1.12 OSL
 # releases should also build but without OptiX support.
-set(OSL_VERSION 1a7670600c8b08c2443a78d03c8c27e9a1149140)
+set(OSL_VERSION 8d1d9f0cf6336ad20a4ed148b8696117258c2b40)
 set(OSL_URI https://github.com/AcademySoftwareFoundation/OpenShadingLanguage/archive/${OSL_VERSION}.tar.gz)
-set(OSL_HASH 7b6d6716b05d1addb92a8f47280bf77f)
+set(OSL_HASH 2c20e3c5ce1259b2359c9f6b8dcea31c)
 set(OSL_HASH_TYPE MD5)
 set(OSL_FILE OpenShadingLanguage-${OSL_VERSION}.tar.gz)
 
@@ -579,9 +579,9 @@ set(WAYLAND_WESTON_HASH 44542b60bf9b9fe3add904af11bbad98)
 set(WAYLAND_WESTON_HASH_TYPE MD5)
 set(WAYLAND_WESTON_HOMEPAGE https://wayland.freedesktop.org)
 
-set(ISPC_VERSION v1.17.0)
+set(ISPC_VERSION v1.21.1)
 set(ISPC_URI https://github.com/ispc/ispc/archive/${ISPC_VERSION}.tar.gz)
-set(ISPC_HASH 4f476a3109332a77fe839a9014c60ca9)
+set(ISPC_HASH edd16b016aabc07819d14fd86a1fb5d0)
 set(ISPC_HASH_TYPE MD5)
 set(ISPC_FILE ispc-${ISPC_VERSION}.tar.gz)
 

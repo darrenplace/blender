@@ -7,6 +7,8 @@ if(WIN32)
     -DFLEX_EXECUTABLE=${LIBDIR}/flexbison/win_flex.exe
     -DBISON_EXECUTABLE=${LIBDIR}/flexbison/win_bison.exe
     -DM4_EXECUTABLE=${DOWNLOAD_DIR}/msys2/msys64/usr/bin/m4.exe
+    -DLLVM_CONFIG_EXECUTABLE=${LIBDIR}/llvm/bin/llvm-config
+    -DLLVM_DIR=${LIBDIR}/llvm/lib/cmake/llvm/
     -DARM_ENABLED=Off
     -DPython3_FIND_REGISTRY=NEVER
   )

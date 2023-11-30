@@ -190,11 +190,8 @@ MaterialPass MaterialModule::material_pass_get(Object *ob,
       break;
     case GPU_MAT_FAILED:
     default:
-      matpass.gpumat = inst_.shaders.material_shader_get(error_mat_,
-                                                         error_mat_->nodetree,
-                                                         pipeline_type,
-                                                         geometry_type,
-                                                         false);
+      matpass.gpumat = inst_.shaders.material_shader_get(
+          error_mat_, error_mat_->nodetree, pipeline_type, geometry_type, false);
       break;
   }
   /* Returned material should be ready to be drawn. */
@@ -239,7 +236,8 @@ Material &MaterialModule::material_sync(Object *ob,
                                         bool has_motion)
 {
   if (geometry_type == MAT_GEOM_VOLUME) {
-    MaterialKey material_key(blender_mat, geometry_type, MAT_PIPE_VOLUME_MATERIAL);
+    MaterialKey material_key(
+        blender_mat, geometry_type, MAT_PIPE_VOLUME_MATERIAL, ob->visibility_flag);
     Material &mat = material_map_.lookup_or_add_cb(material_key, [&]() {
       Material mat = {};
       mat.volume_occupancy = material_pass_get(
@@ -277,7 +275,7 @@ Material &MaterialModule::material_sync(Object *ob,
     prepass_pipe = has_motion ? MAT_PIPE_PREPASS_DEFERRED_VELOCITY : MAT_PIPE_PREPASS_DEFERRED;
   }
 
-  MaterialKey material_key(blender_mat, geometry_type, surface_pipe);
+  MaterialKey material_key(blender_mat, geometry_type, surface_pipe, ob->visibility_flag);
 
   Material &mat = material_map_.lookup_or_add_cb(material_key, [&]() {
     Material mat;
@@ -340,8 +338,11 @@ Material &MaterialModule::material_sync(Object *ob,
       }
     }
 
-    if (true /* TODO: Ray visibility. */) {
+    if (!(ob->visibility_flag & OB_HIDE_SHADOW)) {
       mat.shadow = material_pass_get(ob, blender_mat, MAT_PIPE_SHADOW, geometry_type);
+    }
+    else {
+      mat.shadow = MaterialPass();
     }
 
     mat.is_alpha_blend_transparent = use_forward_pipeline &&

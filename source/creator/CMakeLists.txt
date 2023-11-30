@@ -527,6 +527,22 @@ if(WITH_OPENCOLORIO)
   )
 endif()
 if(WIN32)
+  if(EXISTS ${LIBDIR}/osl/bin/oslquery.dll) # 4.1+
+    windows_install_shared_manifest(
+      FILES ${LIBDIR}/osl/bin/oslquery.dll
+            ${LIBDIR}/osl/bin/oslcomp.dll
+            ${LIBDIR}/osl/bin/oslexec.dll
+            ${LIBDIR}/osl/bin/oslnoise.dll
+      RELEASE
+    )
+    windows_install_shared_manifest(
+      FILES ${LIBDIR}/osl/bin/oslquery_d.dll
+            ${LIBDIR}/osl/bin/oslcomp_d.dll
+            ${LIBDIR}/osl/bin/oslexec_d.dll
+            ${LIBDIR}/osl/bin/oslnoise_d.dll
+      DEBUG
+    )
+  endif()
   if(EXISTS ${LIBDIR}/opencolorio/bin/opencolorio_2_2.dll) # 3.5
     windows_install_shared_manifest(
       FILES ${LIBDIR}/opencolorio/bin/opencolorio_2_2.dll

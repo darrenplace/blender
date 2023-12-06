@@ -441,7 +441,7 @@ typedef enum eBone_BBoneHandleFlag {
                            BBONE_HANDLE_SCALE_EASE,
 } eBone_BBoneHandleFlag;
 
-#define MAXBONENAME 64
+#define MAXBONENAME 256
 
 /** #BoneCollection.flag */
 typedef enum eBoneCollection_Flag {

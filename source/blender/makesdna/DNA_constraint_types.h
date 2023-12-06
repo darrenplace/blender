@@ -48,10 +48,10 @@ typedef struct bConstraint {
   /** Object to use as target for Custom Space of owner. */
   struct Object *space_object;
   /** Subtarget for Custom Space of owner - pchan or vgroup name, MAX_ID_NAME-2. */
-  char space_subtarget[64];
+  char space_subtarget[256];
 
   /** Constraint name, MAX_NAME. */
-  char name[64];
+  char name[256];
 
   /** Amount of influence exerted by constraint (0.0-1.0). */
   float enforce;
@@ -82,7 +82,7 @@ typedef struct bConstraintTarget {
   /** Object to use as target. */
   struct Object *tar;
   /** Subtarget - pchan or vgroup name, MAX_ID_NAME-2. */
-  char subtarget[64];
+  char subtarget[256];
 
   /** Matrix used during constraint solving - should be cleared before each use. */
   float matrix[4][4];
@@ -144,7 +144,7 @@ typedef struct bPythonConstraint {
    * Subtarget from previous implementation
    * (version-patch sets this to "" on file-load), MAX_ID_NAME-2.
    */
-  char subtarget[64];
+  char subtarget[256];
 } bPythonConstraint;
 
 /* Inverse-Kinematics (IK) constraint
@@ -165,11 +165,11 @@ typedef struct bKinematicConstraint {
   /** CopyPose: for auto-ik, maximum length of chain. */
   short max_rootbone;
   /** All: String to specify sub-object target, MAX_ID_NAME-2. */
-  char subtarget[64];
+  char subtarget[256];
   /** All: Pole vector target. */
   struct Object *poletar;
   /** All: Pole vector sub-object target, MAX_ID_NAME-2. */
-  char polesubtarget[64];
+  char polesubtarget[256];
   /** All: Pole vector rest angle. */
   float poleangle;
   /** All: Weight of constraint in IK tree. */
@@ -255,7 +255,7 @@ typedef struct bTrackToConstraint {
   int flags;
   char _pad[4];
   /** MAX_ID_NAME-2. */
-  char subtarget[64];
+  char subtarget[256];
 } bTrackToConstraint;
 
 /* Copy Rotation Constraint */
@@ -266,7 +266,7 @@ typedef struct bRotateLikeConstraint {
   char mix_mode;
   char _pad[2];
   /** MAX_ID_NAME-2. */
-  char subtarget[64];
+  char subtarget[256];
 } bRotateLikeConstraint;
 
 /* Copy Location Constraint */
@@ -275,7 +275,7 @@ typedef struct bLocateLikeConstraint {
   int flag;
   int reserved1;
   /** MAX_ID_NAME-2. */
-  char subtarget[64];
+  char subtarget[256];
 } bLocateLikeConstraint;
 
 /* Copy Scale Constraint */
@@ -284,7 +284,7 @@ typedef struct bSizeLikeConstraint {
   int flag;
   float power;
   /** MAX_ID_NAME-2. */
-  char subtarget[64];
+  char subtarget[256];
 } bSizeLikeConstraint;
 
 /* Maintain Volume Constraint */
@@ -302,7 +302,7 @@ typedef struct bTransLikeConstraint {
   char mix_mode;
   char _pad[3];
   /** MAX_ID_NAME-2. */
-  char subtarget[64];
+  char subtarget[256];
 } bTransLikeConstraint;
 
 /* Floor Constraint */
@@ -312,7 +312,7 @@ typedef struct bMinMaxConstraint {
   float offset;
   int flag;
   /** MAX_ID_NAME-2. */
-  char subtarget[64];
+  char subtarget[256];
   int _pad;
 } bMinMaxConstraint;
 
@@ -333,7 +333,7 @@ typedef struct bActionConstraint {
   float eval_time; /* Only used when flag ACTCON_USE_EVAL_TIME is set. */
   struct bAction *act;
   /** MAX_ID_NAME-2. */
-  char subtarget[64];
+  char subtarget[256];
 } bActionConstraint;
 
 /* Locked Axis Tracking constraint */
@@ -342,7 +342,7 @@ typedef struct bLockTrackConstraint {
   int trackflag;
   int lockflag;
   /** MAX_ID_NAME-2. */
-  char subtarget[64];
+  char subtarget[256];
 } bLockTrackConstraint;
 
 /* Damped Tracking constraint */
@@ -351,7 +351,7 @@ typedef struct bDampTrackConstraint {
   int trackflag;
   char _pad[4];
   /** MAX_ID_NAME-2. */
-  char subtarget[64];
+  char subtarget[256];
 } bDampTrackConstraint;
 
 /* Follow Path constraints */
@@ -382,7 +382,7 @@ typedef struct bStretchToConstraint {
   float bulge_max;
   float bulge_smooth;
   /** MAX_ID_NAME-2. */
-  char subtarget[64];
+  char subtarget[256];
 } bStretchToConstraint;
 
 /* Rigid Body constraint */
@@ -423,7 +423,7 @@ typedef struct bChildOfConstraint {
   /** Parent-inverse matrix to use. */
   float invmat[4][4];
   /** String to specify a sub-object target, `MAX_ID_NAME - 2`. */
-  char subtarget[64];
+  char subtarget[256];
 } bChildOfConstraint;
 
 /* Generic Transform->Transform Constraint */
@@ -431,7 +431,7 @@ typedef struct bTransformConstraint {
   /** Target (i.e. 'driver' object/bone). */
   struct Object *tar;
   /** MAX_ID_NAME-2. */
-  char subtarget[64];
+  char subtarget[256];
 
   /** Can be loc(0), rot(1) or size(2). */
   short from, to;
@@ -485,7 +485,7 @@ typedef struct bPivotConstraint {
   /** Target object (optional). */
   struct Object *tar;
   /** Subtarget name (optional), MAX_ID_NAME-2. */
-  char subtarget[64];
+  char subtarget[256];
   /** Offset from the target to use, regardless of whether it exists. */
   float offset[3];
 
@@ -534,7 +534,7 @@ typedef struct bSizeLimitConstraint {
 typedef struct bDistLimitConstraint {
   struct Object *tar;
   /** MAX_ID_NAME-2. */
-  char subtarget[64];
+  char subtarget[256];
 
   /** Distance (radius of clamping sphere) from target. */
   float dist;

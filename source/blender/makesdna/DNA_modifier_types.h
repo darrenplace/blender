@@ -806,7 +806,7 @@ typedef struct HookModifierData {
 
   struct Object *object;
   /** Optional name of bone target, MAX_ID_NAME-2. */
-  char subtarget[257];
+  char subtarget[256];
 
   char flag;
   /** Use enums from WarpModifier (exact same functionality). */
@@ -1481,9 +1481,9 @@ typedef struct WarpModifierData {
   struct Object *object_from;
   struct Object *object_to;
   /** Optional name of bone target, MAX_ID_NAME-2. */
-  char bone_from[257];
+  char bone_from[256];
   /** Optional name of bone target, MAX_ID_NAME-2. */
-  char bone_to[257];
+  char bone_to[256];
 
   struct CurveMapping *curfalloff;
   /** Optional vertex-group name, #MAX_VGROUP_NAME. */
@@ -1962,11 +1962,11 @@ typedef struct UVWarpModifierData {
   /** Source. */
   struct Object *object_src;
   /** Optional name of bone target, MAX_ID_NAME-2. */
-  char bone_src[257];
+  char bone_src[256];
   /** Target. */
   struct Object *object_dst;
   /** Optional name of bone target, MAX_ID_NAME-2. */
-  char bone_dst[257];
+  char bone_dst[256];
 
   /** Optional vertex-group name, #MAX_VGROUP_NAME. */
   char vgroup_name[64];

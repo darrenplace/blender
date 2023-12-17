@@ -214,7 +214,7 @@ void BLO_read_do_version_after_setup(struct Main *new_bmain, struct BlendFileRea
  * \{ */
 
 typedef struct BLODataBlockInfo {
-  char name[64]; /* MAX_NAME */
+  char name[256]; /* MAX_NAME */
   struct AssetMetaData *asset_data;
   /** Ownership over #asset_data above can be "stolen out" of this struct, for more permanent
    * storage. In that case, set this to false to avoid double freeing of the stolen data. */
